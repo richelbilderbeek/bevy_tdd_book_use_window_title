@@ -24,7 +24,7 @@ fn get_window_title(app: &mut App) -> String {
     assert!(app.is_plugin_added::<bevy::window::WindowPlugin>());
     assert_eq!(count_n_windows(app), 1);
     let mut query = app.world_mut().query::<&Window>();
-    let &ref window = query.single(app.world());
+    let window = query.single(app.world());
     window.title.clone()
 }
 
